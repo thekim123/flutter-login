@@ -1,14 +1,17 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.yellow,
+      body: ListView(
+        children: [
+          SvgPicture.asset("assets/logo.svg", height: 70, width: 70,)
+        ],
       ),
     );
   }
