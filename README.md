@@ -13,7 +13,7 @@ dependencies:
   flutter_svg: ^0.22.0
 ```
 - pub get 을 누르고, dependency를 불러오면 끝!
-
+---
 ### 2. routes 적용하기
 ```dart
   @override
