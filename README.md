@@ -37,3 +37,8 @@ dependencies:
 ![img_1.png](img_1.png)
 - /login으로 설정
 
+### 3. Text 추가 후 클래스로 추출하기
+- ListView를 Column으로 바꾼 후에 Text를 추가하였다.
+- Column위에서 ctrl+w를 누르고 마우스 우클릭 - refactor - extract Flutter Widget 을 선택한다.
+- 추출되는 클래스를 Logo.dart에 옮긴다.
+- 이렇게 하면 재사용하기에 용이하다.

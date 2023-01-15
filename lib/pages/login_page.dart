@@ -1,7 +1,5 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_login/components/Logo.dart';
 
 class LoginPage extends StatelessWidget {
 
@@ -10,9 +8,10 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          SvgPicture.asset("assets/logo.svg", height: 70, width: 70,)
+          Logo("Login"),
         ],
       ),
     );
   }
 }
+
