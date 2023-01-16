@@ -76,3 +76,21 @@ theme: ThemeData(
 - .style을 이용할 수도 있지만 styleFrom을 이용하면 훨씬 적은 코드로 테마를 적용할 수 있다.
 - primary는 프로젝트의 대표 색상이다.
 
+### 6. Form 위젯 유효성 검사
+- CustomTextFormField 부분을 Column으로 감싸고 이것을 위젯으로 추출한다.
+- custom_form.dart 파일을 만들고 추출한 위젯을 옮긴다.
+- custom_text_form_fiels에 유효성 검사를 추가한다.
+```dart
+        TextFormField(
+          validator: (value){
+            if(value == null || value.isEmpty){
+              return "Please enter some text";
+            } else {
+              return null;
+            }
+
+            //value!.isEmpty ? "Please enter some text" : null
+```
+- 주석처리된 부분은 null safety연산자가 추가된 것이다.
+- 강의에서는 Form 부분을 위젯으로 추출했는데 이것이 재사용되기 때문에 추출하는 것은 아닌것 같다.
+- 아무래도 코드의 가독성 때문이 아닌가 싶다.
