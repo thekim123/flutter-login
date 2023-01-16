@@ -42,3 +42,10 @@ dependencies:
 - Column위에서 ctrl+w를 누르고 마우스 우클릭 - refactor - extract Flutter Widget 을 선택한다.
 - 추출되는 클래스를 Logo.dart에 옮긴다.
 - 이렇게 하면 재사용하기에 용이하다.
+
+### 4. TextFormField 디자인하기
+- 컴포넌트 디렉토리에 custom_text_form_field 다트 파일을 만든다.
+- login_page의 Column에 CustomTextFormField를 추가한다.
+- CustomTextFormField에 위에 들어갈 Text위젯과 TextFormField 위젯을 추가한다.
+- TextFormField에는 enabledBorder와 focusedBorder속성을 추가한다.
+- ![img_2.png](img_2.png)
