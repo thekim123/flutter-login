@@ -49,3 +49,30 @@ dependencies:
 - CustomTextFormField에 위에 들어갈 Text위젯과 TextFormField 위젯을 추가한다.
 - TextFormField에는 enabledBorder와 focusedBorder속성을 추가한다.
 - ![img_2.png](img_2.png)
+```dart
+class CustomTextFormField extends StatelessWidget {
+    final String text;
+    
+    const CustomTextFormField({required this.text});
+```
+- 추상화를 하기 위해 필드를 추가하고 생성자를 만든다.
+
+### 5. TextButton 테마 적용 - styleFrom
+- main.dart에 아래와 같은 코드를 입력한다.
+```dart
+theme: ThemeData(
+    textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+          backgroundColor: Colors.black,
+          primary: Colors.white,
+          shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+          ),
+          minimumSize: Size(400, 60),
+        ),
+    ),
+), 
+```
+- .style을 이용할 수도 있지만 styleFrom을 이용하면 훨씬 적은 코드로 테마를 적용할 수 있다.
+- primary는 프로젝트의 대표 색상이다.
+
