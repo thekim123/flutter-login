@@ -120,4 +120,49 @@ if(_formKey.currentState!.validate()){
 - 홈 페이지에는 Navigator.pop()으로 이전 페이지로 가도록 하였다.
 - Navigator는 stack 자료구조로 이루어진 클래스이다. FILO
 
+### 8. validators 라이브러리 사용
+- (pub.get)[pub.get]에 접속한다.
+- validators를 검색하고 Installing 탭에 가서 dependency를 복사하여 pubspec.yaml에 입력한다.
+- import 'package:validators/validators.dart';를 사용할 클래스에 입력한다.
+- custom_text_form_field.dart의 파일을 수정할 것이다.
+```dart
+
+class CustomTextFormField extends StatelessWidget {
+
+  final String text;
+  final mValid;
+
+  const CustomTextFormField({required this.text, required this.mValid});
+```
+- 위와 같이 mValid 필드를 추가하고 생성자도 수정한다.
+- mValid가 우리가 사용한 validation 부분을 받을 것이다.
+- 따라서 custom_form.dart에 유효성검사 로직을 아래 코드처럼 수정한다.
+```dart
+CustomTextFormField(text: "Email",
+      mValid: (value){
+    if(value == null || value.isEmpty){
+      return "Please enter some text";
+    } else if(!isEmail(value)){
+      return "email 형식이 아닙니다.";
+    } else {
+      return null;
+    }
+    }),
+SizedBox(height: medium_gap,),
+CustomTextFormField(
+    text: "Password",
+    mValid: (value){
+      if(value == null || value.isEmpty){
+        return "Please enter some text";
+      } else if(value.toString().length > 20) {
+        return "Too long password.";
+      } else{
+        return null;
+      }
+},),
+```
+- isEmail : 이메일 형식인지 검사하는 메서드이다.
+- 이렇게 하지않고 customTextFormField에서 한꺼번에 수정하면 에러메세지가 Email 박스와 Pw박스에 동시에 나타나게 되는 버그가 생긴다.
+
+
 
