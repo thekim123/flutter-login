@@ -94,3 +94,30 @@ theme: ThemeData(
 - 주석처리된 부분은 null safety연산자가 추가된 것이다.
 - 강의에서는 Form 부분을 위젯으로 추출했는데 이것이 재사용되기 때문에 추출하는 것은 아닌것 같다.
 - 아무래도 코드의 가독성 때문이 아닌가 싶다.
+
+
+### 7. errBorder 속성 & Navigator Push, Pop
+```dart
+errorBorder: OutlineInputBorder(
+  borderRadius:  BorderRadius.circular(20),
+),
+focusedErrorBorder: OutlineInputBorder(
+    borderRadius:  BorderRadius.circular(20),
+),
+```
+- errorBorder : 버튼을 눌렀을 때 에러가 났을 때의 태두리
+- focusedErrorBorder : 버튼을 눌렀을 때 에러가 났을 때의 태두리, 커서가 있는 텍스트필드의 테두리이다.
+
+```dart
+if(_formKey.currentState!.validate()){
+  Navigator.pushNamed(context, "/home");
+}
+```
+- validate() 매서드는 boolean 타입을 리턴한다. 
+- 따라서 validate()의 리턴 값이 true이면 유효성 검사를 만족하는 것이고,
+- 유효성 검사를 만족하면 다음 페이지로 넘겨주는 로직이다.
+- 이 때 사용하는게 Navigator이다.
+- 홈 페이지에는 Navigator.pop()으로 이전 페이지로 가도록 하였다.
+- Navigator는 stack 자료구조로 이루어진 클래스이다. FILO
+
+
